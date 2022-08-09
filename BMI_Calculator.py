@@ -11,6 +11,8 @@
 # bmi = Body Mass Index (BMI)
 # g = gender
 # n = name
+# ft = feet
+# i= inch
 
 #---------------------------------------------------------------------------------------------
 
@@ -32,10 +34,18 @@ while True:
     
 
 w = input("Enter your weight in kilograms :: ")
-h = input("Enter your height in metres :: ")
+
+
+print("Give a spapce between feets and inches")
+ft,i = input("Enter your height (ft inch) :: ").split()
+ft = int(ft)
+i = int(i)
+h = ft*0.3048 + i*0.0254
+h = float(h)
+
 
 w = int(w)
-h = float(h)
+
 bmi = w/(h*h)
 
 print("Your BMI is :", format(bmi,".2f"))
